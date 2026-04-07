@@ -32,7 +32,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
   return (
     <>
       {/* Sidebar */}
-      <div
+      <aside
         className={`fixed inset-y-0 left-0 z-50 w-64 md:w-72 bg-white transform transition-transform duration-300 ease-in-out md:relative md:translate-x-0 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
@@ -85,7 +85,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
             </div>
           </div>
         </div>
-      </div>
+      </aside>
     </>
   );
 };
