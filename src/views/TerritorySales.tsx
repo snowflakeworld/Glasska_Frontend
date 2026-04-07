@@ -12,6 +12,7 @@ import {
   ChartOptions,
   ChartData,
 } from "chart.js";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 import { Bar } from "react-chartjs-2";
 
 import { DateRangeFilter } from "../components/Card";
@@ -55,6 +56,14 @@ const TerritorySales: React.FC = () => {
     maintainAspectRatio: false,
     plugins: {
       legend: { display: false }, // Using custom Tailwind legend instead
+      datalabels: {
+        display: true,
+        color: "#081526",
+        anchor: "start",
+        align: "top",
+        formatter: (value) => `${value}k`,
+        font: { size: 16, weight: 600 },
+      },
     },
     scales: {
       x: {
@@ -66,9 +75,10 @@ const TerritorySales: React.FC = () => {
         stacked: true,
         max: 80,
         ticks: {
-          stepSize: 20,
+          stepSize: 10,
           color: "#5B6581",
-          callback: (value) => `${value}k`,
+          callback: (value: string | number) =>
+            `${Number(value) % 20 === 0 ? value + "k" : ""}`,
         },
         border: { dash: [5, 5] },
         grid: { color: "#D0D5DD", drawTicks: true },
@@ -92,7 +102,7 @@ const TerritorySales: React.FC = () => {
             <TerritoryBarItem key={index} {...bar} />
           ))} */}
         <div className="h-72">
-          <Bar data={chartData} options={options} />
+          <Bar data={chartData} options={options} plugins={[ChartDataLabels]} />
         </div>
       </div>
     </div>

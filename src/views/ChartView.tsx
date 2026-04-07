@@ -1,12 +1,5 @@
 // src/components/Card_DonutChart.tsx
-import React from "react";
-import {
-  Chart as ChartJS,
-  ArcElement,
-  Tooltip,
-  Legend,
-  elements,
-} from "chart.js";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut, Pie } from "react-chartjs-2";
 
 import { AllTimeFilter } from "../components/Card";
