@@ -1,9 +1,9 @@
 import { BadgeProps } from "../types";
 
-const Badge: React.FC<BadgeProps> = ({ icon, value, bgColor, textColor }) => {
+const Badge: React.FC<BadgeProps> = ({ icon, value, bgClass, textClass }) => {
   return (
     <span
-      className={`w-fit flex items-center px-1 rounded-xl gap-2 bg-${bgColor}`}
+      className={`w-fit flex items-center px-1 rounded-xl gap-2 ${bgClass}`}
     >
       {icon && (
         <img
@@ -12,7 +12,7 @@ const Badge: React.FC<BadgeProps> = ({ icon, value, bgColor, textColor }) => {
           className="w-3 h-auto"
         />
       )}
-      <span className={`text-${textColor} font-medium text-xs leading-[1.45]`}>
+      <span className={`${textClass} font-medium text-xs leading-[1.45]`}>
         {value}
       </span>
     </span>

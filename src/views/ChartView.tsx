@@ -10,8 +10,9 @@ interface LegendItem {
   id: number;
   label: string;
   value: string;
-  bgColor: string;
-  textColor: string;
+  bgClass: string;
+  iconClass: string;
+  textClass: string;
 }
 
 interface DonutCardProps {
@@ -60,8 +61,9 @@ const MetricLegend: React.FC<{ items: LegendItem[] }> = ({ items }) => (
       <div key={item.id} className="flex flex-col gap-1">
         <Chip
           value={item.label}
-          bgColor={item.bgColor}
-          textColor={item.textColor}
+          bgColor={item.bgClass}
+          iconColor={item.iconClass}
+          textColor={item.textClass}
         />
         <p className="text-sm font-medium text-grey-600 pl-6">{item.value}</p>
       </div>
@@ -103,29 +105,33 @@ const CardDonutChart: React.FC<DonutCardProps> = ({ type }) => {
       id: 1,
       label: "All Territories",
       value: "2,574",
-      bgColor: "prime-2",
-      textColor: "prime",
+      bgClass: "bg-prime-2",
+      iconClass: "bg-prime",
+      textClass: "text-prime",
     },
     {
       id: 2,
       label: "United States",
       value: "525",
-      bgColor: "green-alpha",
-      textColor: "green",
+      bgClass: "bg-green-alpha",
+      iconClass: "bg-green",
+      textClass: "text-green",
     },
     {
       id: 3,
       label: "Rest Of The World",
       value: "522",
-      bgColor: "brown-dark-alpha",
-      textColor: "brown-dark",
+      bgClass: "bg-brown-dark-alpha",
+      iconClass: "bg-brown-dark",
+      textClass: "text-brown-dark",
     },
     {
       id: 4,
       label: "Not Specified",
       value: "123",
-      bgColor: "brown-light-alpha",
-      textColor: "brown-light",
+      bgClass: "bg-brown-light-alpha",
+      iconClass: "bg-brown-light",
+      textClass: "text-brown-light",
     },
   ];
 
@@ -134,15 +140,17 @@ const CardDonutChart: React.FC<DonutCardProps> = ({ type }) => {
       id: 1,
       label: "Not Specified",
       value: "2,574",
-      bgColor: "brown-light-alpha",
-      textColor: "brown-dark",
+      bgClass: "bg-brown-light-alpha",
+      iconClass: "bg-brown-light",
+      textClass: "text-brown-dark",
     },
     {
       id: 2,
       label: "Welcome",
       value: "150",
-      bgColor: "green-alpha",
-      textColor: "green",
+      bgClass: "bg-green-alpha",
+      iconClass: "bg-green",
+      textClass: "text-green",
     },
   ];
 

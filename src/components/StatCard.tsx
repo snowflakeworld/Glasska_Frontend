@@ -19,8 +19,8 @@ const StatCard: React.FC<StatCardProps> = ({
             <Badge
               icon="icon-stat"
               value={change}
-              bgColor="success-50"
-              textColor="green"
+              bgClass="bg-success-50"
+              textClass="text-green"
             />
             <span className="text-green font-normal text-xs">{status}</span>
           </div>

@@ -17,13 +17,14 @@ export interface StatCardProps {
 export interface BadgeProps {
   icon?: string | null;
   value: string;
-  bgColor: string;
-  textColor: string;
+  bgClass: string;
+  textClass: string;
 }
 
 export interface ChipProps {
   value: string;
   bgColor: string;
+  iconColor: string;
   textColor: string;
 }
 

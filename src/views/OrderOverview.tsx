@@ -83,6 +83,30 @@ const chartData: ChartData<"bar"> = {
   ],
 };
 
+const chipItems = [
+  {
+    id: 1,
+    label: "Overdue",
+    bgClass: "bg-prime-2",
+    iconClass: "bg-prime",
+    textClass: "text-prime",
+  },
+  {
+    id: 2,
+    label: "Completed",
+    bgClass: "bg-green-alpha",
+    iconClass: "bg-green",
+    textClass: "text-green",
+  },
+  {
+    id: 3,
+    label: "Total Task",
+    bgClass: "bg-brown-light-alpha",
+    iconClass: "bg-brown",
+    textClass: "text-brown",
+  },
+];
+
 const OrderOverview: React.FC = () => {
   const [tooltip, setTooltip] = useState<{
     opacity: number;
@@ -140,13 +164,15 @@ const OrderOverview: React.FC = () => {
           {/* Header & Legend */}
           <div className="flex justify-between items-center mb-8">
             <div className="flex gap-3">
-              <Chip value="Overdue" bgColor="prime-2" textColor="prime" />
-              <Chip value="Completed" bgColor="green-alpha" textColor="green" />
-              <Chip
-                value="Total Task"
-                bgColor="brown-light-alpha"
-                textColor="brown"
-              />
+              {chipItems.map((item) => (
+                <Chip
+                  key={item.id}
+                  value={item.label}
+                  bgColor={item.bgClass}
+                  iconColor={item.iconClass}
+                  textColor={item.textClass}
+                />
+              ))}
             </div>
           </div>
 
@@ -168,15 +194,22 @@ const OrderOverview: React.FC = () => {
               <div className="flex flex-col gap-2.5">
                 <Chip
                   value="30 total task"
-                  bgColor="brown-light-alpha"
-                  textColor="brown"
+                  bgColor="bg-brown-light-alpha"
+                  iconColor="bg-brown"
+                  textColor="text-brown"
                 />
                 <Chip
                   value="10 completed"
-                  bgColor="green-alpha"
-                  textColor="green"
+                  bgColor="bg-green-alpha"
+                  iconColor="bg-green"
+                  textColor="text-green"
                 />
-                <Chip value="4 overdue" bgColor="prime-2" textColor="prime" />
+                <Chip
+                  value="4 overdue"
+                  bgColor="bg-prime-2"
+                  iconColor="bg-prime"
+                  textColor="text-prime"
+                />
               </div>
               {/* Pointer arrow */}
               <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white rotate-45 border-r border-b border-gray-100"></div>
