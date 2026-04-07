@@ -18,7 +18,7 @@ const Admin: FC = () => {
         <OrderOverview />
 
         {/* Territory Sales and Recent Notifications */}
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
           <div className="h-full">
             <TerritorySales />
           </div>
@@ -28,7 +28,7 @@ const Admin: FC = () => {
         </div>
 
         {/* Charts */}
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
           <div className="h-full">
             <CardDonutChart type="pie" />
           </div>
