@@ -1,0 +1,36 @@
+module.exports = {
+  content: ["./src/**/*.{ts,tsx}", "./public/index.html"],
+  theme: {
+    extend: {
+      colors: {
+        'background': "#F5F7F9",
+        'prime': "#28C5EE",
+        'prime-2': "#DCF6FC",
+        'primary-text': "#081526",
+        'secondary-text': "#5B6581",
+        'border': "#E4E7EC",
+        'success-50': "#E7F6EC",
+        'green': "#47AF2A",
+        'green-alpha': "#47AF2A29",
+        'grey': "#A1AEBC",
+        'grey-100': "#F0F2F5",
+        'grey-300': "#D0D5DD",
+        'grey-600': "#475367",
+        'grey-900': "#101928",
+        'brown': "#AC9B6D",
+        'brown-light': "#D0C094",
+        'brown-light-alpha': "#D0C09429",
+        'brown-dark': "#695D48",
+        'brown-dark-alpha': "#695D4814",
+        'orange': '#FC7138',
+        'orange-alpha': '#FC713814',
+        'y-text': "#92929D",
+        'x-text': "#A1AEBC",
+        'blue-1': '#4172BD',
+      },
+    },
+  },
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
+};
