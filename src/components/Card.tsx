@@ -1,16 +1,3 @@
-// src/components/Card.tsx
-import React, { ReactNode } from "react";
-
-// Type definition for the header filter component (e.g., date picker or dropdown)
-type CardFilter = ReactNode | (() => ReactNode);
-
-export interface CardProps {
-  title: string;
-  subtitle?: string; // Optional (used in image 0)
-  filter?: CardFilter; // The action/filter on the right (like "All Time")
-  children: ReactNode; // The content of the card
-}
-
 // A simple default filter component to match the images
 export const AllTimeFilter: React.FC = () => (
   <button className="text-sm font-medium text-secondary-text bg-white border border-border px-3 py-2 rounded-lg flex items-center gap-2.5 hover:bg-gray-50 transition">
